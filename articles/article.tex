@@ -1,0 +1,461 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Set page geometry
+\usepackage[margin=2.5cm,headsep=0.5cm]{geometry}
+
+\input{../preamblex}
+
+\begin{document}
+
+Nicholas Kostin \\
+\url{https://github.com/nicholaskostin}
+
+\section{Introduction}
+
+This document is not meant to be a guide on how to use {\LaTeX}, since plenty of those already exist. Rather, what follows is an incoherent collection of examples that demonstrate good practice. Be sure to visit \url{https://github.com/nicholaskostin/LaTeX-templates} for more.
+
+\section{Eigenvalues of a Hermitian Operator}
+
+It is not hard to show that the eigenvalues of a Hermitian operator are real. Let $\ket{a}$ be an eigenstate of the Hermitian operator $A$ corresponding to eigenvalue $a$, then
+\begin{equation}
+    A \ket{a} = a \ket{a}. \label{eq:quantum:eigenvalueproblem}
+\end{equation}
+
+Then we have
+\begin{equation}
+    \braket{a|A|a} = \braket{a|a|a} = a\braket{a|a}. \label{eq:quantum:1}
+\end{equation}
+
+Taking the Hermitian conjugate of both sides of (\ref{eq:quantum:eigenvalueproblem}) gives
+\begin{equation}
+    \bra{a} A^{\dagger} = a^{*} \bra{a}.
+\end{equation}
+
+Then we also have
+\begin{equation}
+    \braket{a|A^{\dagger}|a} = a^{*} \braket{a|a} \label{eq:quantum:2}
+\end{equation}
+
+Since $A$ is Hermitian, we have $\braket{a|A^{\dagger}|a} = \braket{a|A|a}$. Then comparing (\ref{eq:quantum:1}) and (\ref{eq:quantum:2}) gives
+\begin{equation*}
+    \left( a - a^* \right) \braket{a|a} = 0.
+\end{equation*}
+
+This, of course, implies that $a = a^*$, since $\braket{a|a} \neq 0$. Then it must be the case that $a$ is real.
+
+\section{Unit Basis Vectors}
+
+Let $\ihat$, $\jhat$, and $\khat$ be unit vectors parallel to the $x$, $y$, and $z$ axes, respectively. An arbitrary vector $\bm{a}$ can be expanded in terms of these \emph{basis vectors}:
+\begin{equation}
+    \bm{a} = a_x \ihat + a_y \jhat + a_z \khat.
+\end{equation}
+
+One can label a point $P$ by its Cartesian coordinates $(x, y, z)$, but sometimes it is more convenient to use \emph{spherical} coordinates $(r, \theta, \phi)$; $r$ is the distance from the origin (the magnitude of the position vector $\bm{r}$), $\theta$ (the angle down from the $z$-axis) is called the \emph{polar angle}, and $\phi$ (the angle around from the $x$-axis) is the \emph{azimuthal angle}. The unit vectors $\rhat$, $\thetahat$, $\phihat$ constitute an orthogonal basis set. In terms of the Cartesian unit vectors,
+\begin{equation}
+    \begin{rcases} \displaystyle \rhat = \sin{\theta}\cos{\phi}\ \ihat + \sin{\theta}\sin{\phi}\ \jhat + \cos{\theta}\ \khat, \\ \displaystyle \thetahat = \cos{\theta}\cos{\phi}\ \ihat + \cos{\theta}\sin{\phi}\ \jhat - \sin{\theta}\ \khat, \\ \displaystyle \phihat = -\sin{\phi}\ \ihat + \cos{\phi}\ \jhat. \end{rcases}
+\end{equation}
+
+Finally, one can label a point $P$ by its cylindrical coordinates $(\rho, \phi, z)$; $\phi$ has the same meaning as in spherical coordinates, and $z$ is the same as Cartesian, but $\rho$ is the distance to $P$ from the $z$-axis. The unit vectors are
+\begin{equation}
+    \begin{rcases} \displaystyle \rhohat = \cos{\phi}\ \ihat + \sin{\phi}\ \jhat, \\ \displaystyle \phihat = -\sin{\phi}\ \ihat + \cos{\phi}\ \jhat, \\ \displaystyle \zhat = \khat. \end{rcases}
+\end{equation}
+
+\section{Awesome Circled Numbers}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.6]
+    \foreach \c in {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+    {
+        \node at (\c,0) {\Huge\circled{\c}{TEAL}{RED}{BLACK}};
+    }
+\end{tikzpicture}
+\caption*{Here are some cool circled numbers. The first argument is whatever is to be circled, and the second argument is the background color. The third argument is the outline color, and the fourth argument is the color of the first argument.}
+\end{figure}
+
+These circled numbers work in equations too!
+
+\begin{equation*}
+    \Scale[6]{\circled{4}{TEAL}{RED}{BLACK} + \circled{4}{TEAL}{RED}{BLACK} = \circled{8}{TEAL}{RED}{BLACK}}
+\end{equation*}
+
+\section{Consider a Graph}
+
+Consider a graph with vertices
+
+\begin{equation*}
+    V = \left\{ 1, 2, 3, 4, 5, 6 \right\}
+\end{equation*}
+
+and edges
+\begin{equation*}
+    E = \left\{ 1 \to 2, 1 \to 3, 1 \to 4, 2 \to 1, 2 \to 3, 3 \to 4, 4 \to 1, 4 \to 3, 4 \to 5, 4 \to 6, 5 \to 6, 6 \to 5 \right\}
+\end{equation*}
+
+The directed graph for this vertex set $V$ and edge set $E$ is
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+    \coordinate (vertex1) at (4,0);
+    \coordinate (vertex2) at (2,3.464102);
+    \coordinate (vertex3) at (-2,3.464102);
+    \coordinate (vertex4) at (-4,0);
+    \coordinate (vertex5) at (-2,-3.464102);
+    \coordinate (vertex6) at (2,-3.464102);
+    %
+    \node at (vertex1) (nodeV1) {\Huge\circled{1}{DARKBLUE}{red}{red}};
+    \node at (vertex2) (nodeV2) {\Huge\circled{2}{DARKBLUE}{red}{red}};
+    \node at (vertex3) (nodeV3) {\Huge\circled{3}{DARKBLUE}{red}{red}};
+    \node at (vertex4) (nodeV4) {\Huge\circled{4}{DARKBLUE}{red}{red}};
+    \node at (vertex5) (nodeV5) {\Huge\circled{5}{DARKBLUE}{red}{red}};
+    \node at (vertex6) (nodeV6) {\Huge\circled{6}{DARKBLUE}{red}{red}};
+    %
+    \draw[black, ultra thick, <->] (nodeV1) -- (nodeV2);
+    \draw[black, ultra thick, ->] (nodeV2) -- (nodeV3);
+    \draw[black, ultra thick, <->] (nodeV3) -- (nodeV4);
+    \draw[black, ultra thick, ->] (nodeV4) -- (nodeV5);
+    \draw[black, ultra thick, <->] (nodeV5) -- (nodeV6);
+    \draw[black, ultra thick, <->] (nodeV1) -- (nodeV4);
+    \draw[black, ultra thick, ->] (nodeV1) -- (nodeV3);
+    \draw[black, ultra thick, ->] (nodeV4) -- (nodeV6);
+\end{tikzpicture}
+\end{figure}
+
+\section{Classical Electromagnetism}
+
+Here are the Maxwell equations:
+
+\begin{equation*}
+    \begin{cases} \displaystyle \nabla \cdot \bm{E} = \frac{\rho}{\epsilon_o} \\ \displaystyle \nabla \cdot \bm{B} = 0 \\ \displaystyle \nabla \times \bm{E} = -\frac{\partial\bm{B}}{\partial t} \\ \displaystyle \nabla \times \bm{B} = \mu_o \bm{J} + \mu_o\epsilon_o \frac{\partial\bm{E}}{\partial t} \end{cases}.
+\end{equation*}
+
+The Lorentz force law reads
+\begin{equation*}
+    \bm{F} = q \left( \bm{E} + \bm{v} \times \bm{B} \right).
+\end{equation*}
+
+Finally, most experts agree that
+\begin{equation*}
+    \bm{E} = -\nabla V - \frac{\partial \bm{A}}{\partial t}, \qquad \text{and} \qquad \bm{B} = \nabla \times \bm{A}.
+\end{equation*}
+
+\section{Matrix Multiplication}
+
+Consider some $A \in \bbR^{p \times q}$ and $B \in \bbR^{q \times p}$. We can represent these matrices as
+\begin{equation*}
+    A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1q} \\ a_{21} & a_{22} & \cdots & a_{2q} \\ \vdots & \vdots & \ddots & \vdots \\ a_{p1} & a_{p2} & \cdots & a_{pq} \end{pmatrix} \qquad \text{and} \qquad B = \begin{pmatrix} b_{11} & b_{12} & \cdots & b_{1p} \\ b_{21} & a_{22} & \cdots & b_{2p} \\ \vdots & \vdots & \ddots & \vdots \\ b_{q1} & b_{q2} & \cdots & b_{qp} \end{pmatrix}
+\end{equation*}
+
+respectively. Then the product $AB$ can be written
+\begin{equation*}
+    AB = \begin{pmatrix} a_{11} b_{11} + \cdots + a_{1q} b_{q1} & a_{11} b_{12} + \cdots + a_{1q} b_{q2} & \cdots & a_{11} b_{1p} + \cdots + a_{1q} b_{qp} \\ a_{21} b_{11} + \cdots + a_{2q} b_{q1} & a_{21} b_{12} + \cdots + a_{2q} b_{q2} & \cdots & a_{21} b_{1p} + \cdots + a_{2q} b_{qp} \\ \vdots & \vdots & \ddots & \vdots \\ a_{p1} b_{11} + \cdots + a_{pq} b_{q1} & a_{p1} b_{12} + \cdots + a_{pq} b_{q2} & \cdots & a_{p1} b_{1p} + \cdots + a_{pq} b_{qp} \end{pmatrix}.
+\end{equation*}
+
+\section{Electric Fields on Pointy Things}
+
+The pointy bits on a conducting surface should produce greater electric fields then the flat bits. Let's show that numerically. Laplace's equation, in two dimensions, reads
+\begin{equation}
+    \nabla^2 V = \frac{\partial^2 V}{\partial x^2} + \frac{\partial^2 V}{\partial y^2} = 0.
+\end{equation}
+
+We can solve Laplace's equation numerically using a finite difference method for a rectangular region. That is, we partition a rectangle into a lattice of grid points. If the spacing in the $x$-direction is $\Delta x$, the second derivative $\frac{\partial^2 V}{\partial x^2}$ is
+\begin{equation}
+    \frac{\partial^2 V}{\partial x^2} = \frac{V(x + \Delta x, y) - 2V(x,y) + V(x - \Delta x, y)}{\Delta x^2}.
+\end{equation}
+
+Similarly, if the spacing in the $y$-direction is $\Delta y$, the second derivative $\frac{\partial^2 V}{\partial y^2}$ is
+\begin{equation}
+    \frac{\partial^2 V}{\partial y^2} = \frac{V(x, y + \Delta y) - 2V(x,y) + V(x, y - \Delta y)}{\Delta y^2}.
+\end{equation}
+
+For convenience, let's say $\Delta x = \Delta y = h$. The Laplacian operator in two-dimensions becomes
+\begin{equation}
+    \frac{\partial^2 V}{\partial y^2} + \frac{\partial^2 V}{\partial y^2} = \frac{V(x + h, y) + V(x - h, y) + V(x, y + h) + V(x, y - h) - 4V(x,y)}{h^2}.
+\end{equation}
+
+Then Laplace's equation becomes
+\begin{gather}
+    V(x + h, y) + V(x - h, y) + V(x, y + h) + V(x, y - h) - 4V(x,y) = 0 \\
+    \implies \boxed{V(x,y) = \frac{V(x + h, y) + V(x - h, y) + V(x, y + h) + V(x, y - h)}{4}}.
+\end{gather}
+
+That is, the potential $V(x,y)$ is the average of its four neighboring points on the lattice. Let's make this concrete by drawing a diagram.
+
+\begin{figure}[H]
+\captionsetup{width=0.8\textwidth,labelfont={color=BLACK,bf},textfont={color=BLACK}}
+\centering
+\begin{tikzpicture}[xscale=1,yscale=1]
+    % Draw outside rectangle
+    \draw[black] (-2,-2) rectangle (14,10);
+    % Draw lattice points
+    \foreach \a in {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+    {
+        \foreach \b in {0, 1, 2, 3, 4, 5, 6, 7, 8}
+        {
+            \filldraw[BLACK] (\a, \b) circle (2pt);
+        }
+    }
+    \node[BLACK, anchor=north] at (0,0) {$x_0$};
+    \node[BLACK, anchor=north] at (1,0) {$x_1$};
+    \node[BLACK, anchor=north] at (11,0) {$x_{N - 1}$};
+    \node[BLACK, anchor=north] at (12,0) {$x_N$};
+    \node[BLACK, anchor=east] at (0,0) {$y_0$};
+    \node[BLACK, anchor=east] at (0,1) {$y_1$};
+    \node[BLACK, anchor=east] at (0,7) {$y_{M - 1}$};
+    \node[BLACK, anchor=east] at (0,8) {$y_M$};
+    \draw[BLACK, <->] (7,-0.2) -- (8,-0.2);
+    \node[BLACK, below] at (7.5,-0.2) {$h$};
+    \draw[BLACK, <->] (-0.2,4) -- (-0.2,5);
+    \node[BLACK, left] at (-0.2,4.5) {$h$};
+    \filldraw[RED] (6,4) circle (2.5pt) node[anchor=south west] {$V_{n,m}$};
+    \draw[RED] (6,3) -- (6,4) -- (6,5);
+    \draw[RED] (5,4)-- (6,4) -- (7,4);
+    \filldraw[BLUE] (7,4) circle (2.5pt) node[anchor=north west] {$V_{n+1,m}$};
+    \filldraw[BLUE] (5,4) circle (2.5pt) node[anchor=south east] {$V_{n-1,m}$};
+    \filldraw[BLUE] (6,3) circle (2.5pt) node[anchor=north] {$V_{n,m+1}$};
+    \filldraw[BLUE] (6,5) circle (2.5pt) node[anchor=south] {$V_{n,m-1}$};
+    \draw[BLACK, <->] (0,8.3) -- (12,8.3);
+    \node[BLACK, above] at (6,8.3) {$w$};
+    \draw[BLACK, <->] (12.3,0) -- (12.3,8);
+    \node[BLACK, right] at (12.3,4) {$\ell$};
+\end{tikzpicture}
+\caption{A two-dimensional lattice of points.}
+\label{fig:latticegrid}
+\end{figure}
+
+As shown in Fig. (\ref{fig:latticegrid}), we partition the interval $0 < x < w$ into $N + 1$ evenly spaced points. That is,
+\begin{equation}
+    x_n = nh, \qquad \text{for} \quad n \in \left\{ 0, 1, \dots, N \right\}.
+\end{equation}
+
+Likewise, we divide the interval $0 < y < \ell$ into $M + 1$ evenly spaced points. That is,
+\begin{equation}
+    y_m = mh, \qquad \text{for} \quad m \in \left\{ 0, 1, \dots M \right\}.
+\end{equation}
+
+Shown on the following pages is the implementation of this numerical method.
+
+% If we were uploading from an external file, use the line below.
+% \lstinputlisting[language=python]{corners.py}
+
+\begin{lstlisting}[language=Python]
+"""
+Created on Mon Feb 03 13:12:20: 2020
+Author: Nicholas D. Kostin
+Description: Numerical solution to Laplace's equation for a rectangle
+"""
+
+import numpy as np, matplotlib.pyplot as plt
+
+plt.rcParams['mathtext.fontset'] = 'stix'
+plt.rcParams['font.family'] = 'STIXGeneral'
+
+# Physical constants
+eps0 = 8.85e-12 # permittivity of free space
+
+# Dimensions of region
+region_width = 120 # Horizontal length of region
+region_length = 80  # Vertical length of region
+
+# Dimensions of conucting rectangle
+rectangle_width = 60  # Horizontal length of conducting rectangle
+rectangle_length = 40  # Vertical length of conducting rectangle
+
+# Location of bottom-left corner of conducting rectangle
+rect_corner = 20
+
+# Set potential at boundaries of region to be zero
+boundary_potential = 0
+
+# Dirichlet Boundary conditions on conducting rectangle
+# All sides at the same potential
+V_box = 9
+
+# Set color interpolation and color map
+color_interpolation = 20
+color_map = plt.cm.coolwarm # dope-ass colors
+
+# Create lattice of points
+X, Y = np.meshgrid(np.arange(0, region_width), np.arange(0, region_length))
+
+# Set array size and the interior value with some guess
+V = np.ones((region_length, region_width))
+V.fill(0)
+
+# Set potential at boundaries of region
+V[1, :] = boundary_potential # potential at bottom
+V[region_length - 1, :] = boundary_potential # potential at top
+V[:, 1] = boundary_potential # potential at left
+V[:, region_width - 1] = boundary_potential # potential at right
+
+
+# Set potential at boundaries of conducting rectangle
+V[rect_corner, rect_corner:rect_corner + rectangle_width] = V_box # potential at bottom
+V[rect_corner + rectangle_length, rect_corner:rect_corner + rectangle_width] = V_box # potential at top
+V[rect_corner:rect_corner + rectangle_length, rect_corner] = V_box # potential at left
+V[rect_corner:rect_corner + rectangle_length, rect_corner + rectangle_width] = V_box # potential at right
+
+# Implement 1000 iterations (and hope that's enough for convergence)
+for iteration in range(0,1000):
+    for i in range(1, region_length - 1, 1):
+        for j in range(1, region_width - 1, 1):
+            # Conducting surfaces are equipotentials
+            if rect_corner <= i <= rect_corner + rectangle_length and rect_corner <= j <= rect_corner + rectangle_width:
+                V[i, j] = V[i, j]
+            # Implement finite difference method                
+            else:
+                V[i, j] = (1/4) * (V[i - 1][j] + V[i + 1][j] + V[i][j - 1] + V[i][j + 1])
+
+# Create array for electric field
+E = np.zeros((region_length, region_width, 2))
+
+# Compute electric field
+for i in range (region_length):
+    for j in range (region_width):
+        # Electric field is zero inside a conductor
+        if rect_corner <= i <= rect_corner + rectangle_length and rect_corner <= j <= rect_corner + rectangle_width:
+            E[i, j] = [0, 0]
+        # Electric field is derivative of potential otherwise
+        elif i != 0 and i != region_length - 1 and j != 0 and j != region_width - 1:
+            E[i, j] = [(V[i + 1, j] - V[i - 1, j])/(2), (V[i, j + 1] - V[i, j - 1])/(2)]
+
+# Create array for magnitude of the electric field
+E_magnitude = np.zeros((region_length, region_width))
+
+# Compute the magnitude of the elctric field
+for i in range (region_length):
+    for j in range (region_width):
+        E_magnitude[i, j] = (E[i, j, 0]**2 + E[i, j, 1]**2)**(1/2)
+        
+# Plot a contour map of the potential
+plt.figure(1)
+plt.title("Contour of Potential")
+plt.contourf(X, Y, V, color_interpolation, cmap=color_map)
+plt.colorbar() # Set colorbar
+plt.show() # Display the color map
+
+# Plot a contour map of the electric field magnitude
+plt.figure(2)
+plt.title("Contour of Magnitude of Electric Field")
+plt.contourf(X, Y, E_magnitude, color_interpolation, cmap=color_map)
+plt.colorbar() # Set colorbar
+plt.show() # Display the color map
+\end{lstlisting}
+
+\section{Infinite Square Well Potential}
+
+Suppose we have a quantum particle with mass $m$ in an infinite square well potential:
+\begin{equation*}
+    V(x) = \begin{cases} 0, & 0 \leqslant x \leqslant \infty \\ \infty & \text{otherwise} \end{cases}.
+\end{equation*}
+
+The expectation value of the position $\hat{x}$ of the particle measured in the energy eigenstate $\ket{\psi_n}$ that is represented by $\psi_n(x) = \sqrt{\frac{2}{\pi}} \sin{(nx)}$, we use
+\begin{equation}
+    \Braket{\psi_n | \hat{x} | \psi_n} = \int_{0}^{\pi} \psi_n^*(x)\ x\ \psi_n(x)\ dx = \frac{2}{\pi} \int_{0}^{\pi} x\ \sin^2{(nx)}\ dx = \frac{\pi}{2}.
+\end{equation}
+
+The expectation value of the momentum $\hat{p}$ in the eigenstate $\ket{\psi_n}$ is given by
+\begin{equation}
+    \Braket{\psi_n | \hat{p} | \psi_n} = \int_{0}^{\pi} \psi_n^*(x)\ \left( -i\hbar\frac{d}{dx} \right)\ \psi_n(x)\ dx = 0.
+\end{equation}
+
+\section{Commuting Hermitian Matrices}
+
+Let $A, B \in \bbC^{p \times p}$ be Hermitian matrices. Prove that $AB$ is Hermitian if and only if $A$ and $B$ commute (\textit{i.e.} they don't work from home).
+
+\begin{proof}
+
+A matrix $\mathscr{A} \in \bbC^{p \times p}$ is Hermitian if it satisfies
+\begin{equation*}
+    \mathscr{A}^{\dagger} = \mathscr{A}.
+\end{equation*}
+
+That is, a matrix $\mathscr{A} \in \bbC^{p \times p}$ is Hermitian if it is its own conjugate transpose. Moreover, for $\mathscr{A} \in \bbC^{p \times q}$ and $\mathscr{B} \in \bbC^{q \times r}$, we have the identity
+\begin{equation*}
+    \left( \mathscr{AB} \right)^{\dagger} = \mathscr{B}^{\dagger} \mathscr{A}^{\dagger}.
+\end{equation*}
+
+We will start by proving the forward direction. That is, we will show that if $A$ and $B$ commute, then $AB$ must be Hermitian. Using the identity above to take the conjugate transpose of $AB$ we get
+\begin{equation*}
+    \left( AB \right)^{\dagger} = B^{\dagger} A^{\dagger}.
+\end{equation*}
+
+But since we assumed $A$ and $B$ to both be Hermitian, we have that $B^{\dagger} = B$ and $A^{\dagger} = A$. Explicitly,
+\begin{equation*}
+    \left( AB \right)^{\dagger} = B^{\dagger} A^{\dagger} = BA.
+\end{equation*}
+
+But since we assumed $A$ and $B$ commute, then $BA = AB$. And we have
+\begin{equation*}
+    \left( AB \right)^{\dagger} = B^{\dagger} A^{\dagger} = BA = AB
+\end{equation*}
+
+Thereby $AB$ satisfies the definition of a Hermitian matrix. Now we will show the reverse direction: that if $AB$ is Hermitian then $A$ and $B$ must necessarily commute. If $AB$ is Hermitian, then
+\begin{equation*}
+    \left( AB \right)^{\dagger} = AB
+\end{equation*}
+
+But we already showed that we can rewrite the left-hand side of the equation above as $\left( AB \right)^{\dagger} = B^{\dagger} A^{\dagger} = AB$, since we assumed $A$ and $B$ to both be Hermitian. Then we have
+\begin{equation*}
+    BA = AB.
+\end{equation*}
+
+And clearly, $A$ and $B$ must necessarily commute.
+
+\end{proof}
+
+\section{Blind Text}
+
+\blindtext[1]
+
+\section{Some Results from Real Analysis}
+
+Here we have a \emph{theorem}.
+
+\begin{theorem}[Bolzano-Weierstrass]
+Every bounded sequence has a convergent subsequence.
+\end{theorem}
+
+What follows is a \emph{lemma}.
+
+\begin{lemma}
+Cauchy sequences are bounded.
+\end{lemma}
+
+\section{Computer Colors}
+
+HTML color codes are hexadecimal triplets representing the colors red, green and blue.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2]
+    % primary colors
+    \fill[BLUE] (30:2.4) circle (4);
+    \fill[RED] (150:2.4) circle (4);
+    \fill[GREEN] (270:2.4) circle (4);
+    % secondary colors
+    \begin{scope} % red + blue = purple
+        \clip (150:2.4) circle (4);
+        \fill[PURPLE] (30:2.4) circle (4);
+    \end{scope}
+    \begin{scope} % red + green = yellow
+        \clip (270:2.4) circle (4);
+        \fill[YELLOW] (150:2.4) circle (4);
+    \end{scope}
+    \begin{scope} green + blue = teal
+        \clip (30:2.4) circle (4);
+        \fill[TEAL] (270:2.4) circle (4);
+    \end{scope}
+    % red + blue + green = white
+    \begin{scope}
+        \clip (30:2.4) circle (4);
+        \clip (150:2.4) circle (4);
+        \fill[WHITE] (270:2.4) circle (4);
+    \end{scope}
+\end{tikzpicture}
+\end{figure}
+
+\end{document}
