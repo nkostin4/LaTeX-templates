@@ -2,9 +2,9 @@
 
 ![Example LaTeX](images/klein_gordon.png?raw=true)
 
-## Why Do I Include So Many Packages?
+## Why So Many Packages?
 
-The `preamblex.tex` file that I input into nearly every document (my full preamble) is extremely long. Most users will not need so many packages or such a rich variety of colors. That said, LaTeX is a fairly bloated program, and I don't think it's even worth optimizing for compilation time. On those grounds, I include pretty much every package I've worked with (or at least know how to use) in pretty much all my documents.
+The `preamblex.tex` file that I input into nearly every document (my full preamble) is extremely long. You probably won't need so many packages (or such a rich variety of colors). That said, LaTeX on its own is fairly bloated, and I don't think it's even worth optimizing for compilation time. As such, every document I write contains the line `\input{preamblex}` so that I always have access to all these packages.
 
 ## A Point of Caution with the Beamer Class
 
