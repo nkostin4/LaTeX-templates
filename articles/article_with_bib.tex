@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Set page geometry
+\usepackage[margin=2.5cm,headsep=0.5cm]{geometry}
+
+\input{../preamblex}
+
+% Bibliography Management
+\usepackage[backend=biber,sorting=none]{biblatex}
+\addbibresource{ref.bib}
+
+\begin{document}
+
+Nicholas Kostin \\
+\url{https://github.com/nkostin4}
+
+\section{Perturbation Theory --- Nondegenerate Case}
+
+Perturbation theory is a useful technique to obtain approcimate solutions to eigenvalue-eigenvector problems that are too complicated to be solved exactly \cite{byronfuller}. Suppose we want to find the eigenvalues and eigenvectors of a self-adjoint operator $A$ which may be split up into the sum of two self-adjoint operators:
+\begin{equation*}
+    A = A_o + \epsilon A_1
+\end{equation*}
+
+We assume that we knwo something about $A_o$. For example, we might know some eigenvalue and its associated eigenvector. We would like to find the corresponding eigenvalue and eigenvector of $A$, given that the influence of $A_o$ is known to be predominant. We have already anticipated this situation be writing the ``perturbing'' operator in the form of $\epsilon A_1$, where $\epsilon$ is some small parameter \cite{byronfuller}.
+
+\section{Radiation}
+
+When charges accelerate, their fields can transport energy irreversibly out to infinity --- a process we call radiation \cite{griffiths}. Let's assume the source is localized near the orgin. Our objective is to calculate the energy it is radiating at time $t_o$. Imagine a gigantic sphere, out at radius $r$. The power passing through its surface is the integral of the Poynting vector:
+\begin{equation*}
+    P(r, t) = \oint \bm{S} \cdot d\bm{a} = \frac{1}{\mu_o} \oint \left( \bm{E} \times \bm{B} \right) \cdot d\bm{a}.
+\end{equation*}
+
+Because electromagnetic ``news" travels at the speed of light, this energy actually left the source at the earlier time $t_o = t - r/c$, so the power radiated is
+\begin{equation*}
+    P_{\text{rad}} \left( t_o \right) = \lim_{r \to \infty} P \left( r, t_o + \frac{r}{c} \right)
+\end{equation*}
+
+(with $t_o$ held constant). This is the energy (per unit time) that is carried away and never comes back \cite{griffiths}.
+
+% Print entire bibliography - title it 'References'
+\printbibliography[heading=bibintoc,title={References}]
+
+\end{document}
