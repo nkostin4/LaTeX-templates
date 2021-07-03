@@ -10,20 +10,75 @@
 % Bibliography Management
 \usepackage[backend=biber,sorting=none]{biblatex}
 \addbibresource{ref.bib}
+\BiblatexSplitbibDefernumbersWarningOff
 
 \begin{document}
 
 Nicholas Kostin \\
 \url{https://github.com/nkostin4}
 
+% \tableofcontents
+
+\section{Introduction}
+
+This brief document is meant to show the best paradigm for bibliography management with {\LaTeX}. This guide contains examples that touch on perturbation theory, the Aharonov-Bohm effect, and electromagnetic radiation --- all topics in the field of theoretical physics.
+
+\vspace{1em}
+
+On an entirely unrelated note, it is worth remembering that ``one of the biggest issues of modern post-war institutionalized science is that the funding and peer-review mechanism is self-reinforcing \ldots [which] creates a community of "scientists" who are more and more incestuous and generally oblivious not just to other possibilities of inquiry, but don't even have to be aware of their own priors or assumptions.'' \cite{fragile}. 
+
 \section{Perturbation Theory --- Nondegenerate Case}
 
-Perturbation theory is a useful technique to obtain approcimate solutions to eigenvalue-eigenvector problems that are too complicated to be solved exactly \cite{byronfuller}. Suppose we want to find the eigenvalues and eigenvectors of a self-adjoint operator $A$ which may be split up into the sum of two self-adjoint operators:
+Perturbation theory is a useful technique to obtain approximate solutions to eigenvalue-eigenvector problems that are too complicated to be solved exactly \cite{byronfuller}. Suppose we want to find the eigenvalues and eigenvectors of a self-adjoint operator $A$ which may be split up into the sum of two self-adjoint operators:
 \begin{equation*}
-    A = A_o + \epsilon A_1
+    A = A_o + \epsilon A_1.
 \end{equation*}
 
-We assume that we knwo something about $A_o$. For example, we might know some eigenvalue and its associated eigenvector. We would like to find the corresponding eigenvalue and eigenvector of $A$, given that the influence of $A_o$ is known to be predominant. We have already anticipated this situation be writing the ``perturbing'' operator in the form of $\epsilon A_1$, where $\epsilon$ is some small parameter \cite{byronfuller}.
+We assume that we know something about $A_o$. For example, we might know some eigenvalue and its associated eigenvector. We would like to find the corresponding eigenvalue and eigenvector of $A$, given that the influence of $A_o$ is known to be predominant. We have already anticipated this situation be writing the ``perturbing'' operator in the form of $\epsilon A_1$, where $\epsilon$ is some small parameter \cite{byronfuller}.
+
+\section{The Aharonov-Bohm Effect}
+
+Classically, a particle can't sense potentials, only fields. In other words, the actual value of a potential --- whether it be $\bm{A}$ or $\phi$ --- isn't supposed to matter. In quantum mechanics, we want to obtain the eigenfunctions describing allowed particle states by solving $H \psi = E \psi$, where the Hamiltonian reads
+\begin{equation*}
+    H = \frac{1}{2m} \left( \frac{\hbar}{i} \nabla - q \bm{A} \right)^2 + q\phi.
+\end{equation*}
+
+Observe that the Hamiltonian is expressed in terms of potentials, not fields. It should then stand to reason that a particle whose behavior is governed quantum mechanically can ``sniff'' nearby magnetic fields via the resulting vector potential $\bm{A}$.
+
+\subsection{General Description}
+
+Suppose $\psi'$ is an eigenstate of
+\begin{equation*}
+	H = \frac{\hbar^2}{2m} \nabla^2 + q\psi.
+\end{equation*}
+
+Observe that this Hamiltonian doesn't have a vector potential present. Say $\psi'$ is a basis state. Now suppose we consider a new region where $\bm{B}$ is zero (so the vector potential $\bm{A}$ is still curl-free), but now there is a non-zero vector potential:
+\begin{equation*}
+	\nabla \times \bm{A} = \bm{0}, \qquad \bm{A} \neq \bm{0}.
+\end{equation*}
+
+In this regime, the eigenstate, say, $\psi$, of this new Hamiltonian can be built from the old $\psi'$ eigenstates. In fact, these differ only by a phase factor:
+\begin{equation*}
+	\psi = e^{ig} \psi', \qquad \text{where } g \equiv \frac{q}{\hbar} \int \bm{A} \cdot d\bm{\ell}.
+\end{equation*}
+
+All of this is pretty abstract, so let's summarize what we have so far: the wavefunctions for particles in a vector potential --- in a region where there is zero $\bm{B}$-field (and maybe even zero $\bm{E}$-field) --- pick up phases when they travel through that region. Different phases depending on the paths involved. But no problem, right? The square magnitude of the new $\psi$ makes the new phase go away, right? Unless, we have more than one particle. Then we get observable interference that depends on the value of the vector potential.
+
+\subsection{Aharonov and Bohm's Experiment}
+
+Aharonov and Bohm proposed an experiment in which a stream of electrons is split in two, and passes either side of a solenoid \cite{aharonovbohm}. A long solenoid has a uniform magnetic field within it, and nearly zero magnetic field outside. However, the vector potential $\bm{A}$ at a distance $r$ from the center of the solenoid is not zero. In particular,
+\begin{equation*}
+	\bm{A} = \frac{\pi a^2 B}{2\pi r} \phihat,
+\end{equation*}
+
+where $a$ is the radius of the solenoid and $B$ is the magnitude of the magnetic field. One of the electron beams in the experiment travels along this vector potential, while the other moves against it. As such, there is a phase accumulation:
+\begin{equation*}
+    g = \frac{q}{\hbar} \int \bm{A} \cdot d\bm{\ell} = \frac{q\ \pi a^2\ B}{2\pi\hbar} \int \left( \frac{1}{r}\ \phihat \right) \cdot \left( r\ \phihat\ d\phi \right) = \pm \frac{q\ \pi a^2\ B}{2\hbar}.
+\end{equation*}
+
+Say, the electrons traveling along the vector potential accumulate a positive phase, while the electrons traveling against the vector potential accumulate an equal and opposite negative phase, such that the phase difference is $\displaystyle \frac{q\ \pi a^2\ B}{\hbar}$.
+
+Herein lies the conclusion that Yakir Aharonov and David Bohm reached --- for a charged quantum particle moving though space, it is insufficient to know the local electromagentic field to predict the time evolution of the particle's wavefunction. As cool as this is, the Aharonov Bohm effect is nothing more than a special case of the broader geometric phase \cite{aharonovbohm}.
 
 \section{Radiation}
 
@@ -32,7 +87,7 @@ When charges accelerate, their fields can transport energy irreversibly out to i
     P(r, t) = \oint \bm{S} \cdot d\bm{a} = \frac{1}{\mu_o} \oint \left( \bm{E} \times \bm{B} \right) \cdot d\bm{a}.
 \end{equation*}
 
-Because electromagnetic ``news" travels at the speed of light, this energy actually left the source at the earlier time $t_o = t - r/c$, so the power radiated is
+Because electromagnetic ``news'' travels at the speed of light, this energy actually left the source at the earlier time $t_o = t - r/c$, so the power radiated is
 \begin{equation*}
     P_{\text{rad}} \left( t_o \right) = \lim_{r \to \infty} P \left( r, t_o + \frac{r}{c} \right)
 \end{equation*}
@@ -41,5 +96,11 @@ Because electromagnetic ``news" travels at the speed of light, this energy actua
 
 % Print entire bibliography - title it 'References'
 \printbibliography[heading=bibintoc,title={References}]
+
+% Only books bibliography
+\printbibliography[heading=subbibintoc,type=book,title={Books only}]
+
+% Only Physics Resources
+\printbibliography[heading=subbibintoc,keyword={physics},title={Physics-related only}]
 
 \end{document}
