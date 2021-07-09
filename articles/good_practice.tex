@@ -7,14 +7,17 @@
 
 \input{../preamblex}
 
+\title{Illustrating Good Practice in {\LaTeX}}
+\author{Nicholas D. Kostin}
+\date{July 2021}
+
 \begin{document}
 
-Nicholas Kostin \\
-\url{https://github.com/nkostin4}
+\maketitle
 
 \section{Introduction}
 
-This document is not meant to be a guide on how to use {\LaTeX}, since plenty of those already exist. Rather, what follows is an incoherent collection of examples that demonstrate good practice. Be sure to visit \url{https://github.com/nkostin4/LaTeX-templates} for more.
+This document is not meant to be a guide on how to use {\LaTeX}, since plenty of those already exist. Rather, what follows is an incoherent collection of examples that illustrate good practice. For more of my awesome {\LaTeX} resources, visit \url{https://github.com/nkostin4/LaTeX-templates}.
 
 \section{Eigenvalues of a Hermitian Operator}
 
@@ -76,9 +79,8 @@ Finally, one can label a point $P$ by its cylindrical coordinates $(\rho, \phi, 
 \end{figure}
 
 These circled numbers work in equations too!
-
 \begin{equation*}
-    \Scale[6]{\circled{4}{TEAL}{RED}{BLACK} + \circled{4}{TEAL}{RED}{BLACK} = \circled{8}{TEAL}{RED}{BLACK}}
+    \bigints_{\circled{$a$}{PINK}{BLACK}{BLACK}}^{\circled{$b$}{GOLDC}{BLACK}{BLACK}} \Scale[2]{f(x)} \Scale[2]{dx} \hspace{1em} \Scale[2]{+} \hspace{1em} \bigints_{\circled{$b$}{GOLDC}{BLACK}{BLACK}}^{\circled{$a$}{PINK}{BLACK}{BLACK}} \Scale[2]{f(x)} \Scale[2]{dx} \hspace{1em} \Scale[2]{=} \hspace{1em} \Scale[2]{\circled{0}{GREEN}{RED}{BLACK}}
 \end{equation*}
 
 \section{Consider a Graph}
@@ -106,12 +108,12 @@ The directed graph for this vertex set $V$ and edge set $E$ is
     \coordinate (vertex5) at (-2,-3.464102);
     \coordinate (vertex6) at (2,-3.464102);
     %
-    \node at (vertex1) (nodeV1) {\Huge\circled{1}{DARKBLUE}{red}{red}};
-    \node at (vertex2) (nodeV2) {\Huge\circled{2}{DARKBLUE}{red}{red}};
-    \node at (vertex3) (nodeV3) {\Huge\circled{3}{DARKBLUE}{red}{red}};
-    \node at (vertex4) (nodeV4) {\Huge\circled{4}{DARKBLUE}{red}{red}};
-    \node at (vertex5) (nodeV5) {\Huge\circled{5}{DARKBLUE}{red}{red}};
-    \node at (vertex6) (nodeV6) {\Huge\circled{6}{DARKBLUE}{red}{red}};
+    \node at (vertex1) (nodeV1) {\Huge\circled{1}{ORANGE}{RED}{DARKBLUE}};
+    \node at (vertex2) (nodeV2) {\Huge\circled{2}{ORANGE}{RED}{DARKBLUE}};
+    \node at (vertex3) (nodeV3) {\Huge\circled{3}{ORANGE}{RED}{DARKBLUE}};
+    \node at (vertex4) (nodeV4) {\Huge\circled{4}{ORANGE}{RED}{DARKBLUE}};
+    \node at (vertex5) (nodeV5) {\Huge\circled{5}{ORANGE}{RED}{DARKBLUE}};
+    \node at (vertex6) (nodeV6) {\Huge\circled{6}{ORANGE}{RED}{DARKBLUE}};
     %
     \draw[black, ultra thick, <->] (nodeV1) -- (nodeV2);
     \draw[black, ultra thick, ->] (nodeV2) -- (nodeV3);
@@ -431,7 +433,7 @@ HTML color codes are hexadecimal triplets representing the colors red, green and
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=1.2]
+\begin{tikzpicture}[scale=0.75]
     % primary colors
     \fill[BLUE] (30:2.4) circle (4);
     \fill[RED] (150:2.4) circle (4);
