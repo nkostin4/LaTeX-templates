@@ -130,8 +130,23 @@ The directed graph for this vertex set $V$ and edge set $E$ is
 
 Here are the Maxwell equations:
 
+\begin{table}[H]
+\centering
+\captionsetup{width=0.8\textwidth,labelfont={color=black,bf},textfont={color=black}}
+\caption*{Maxwell's equations and their interpretation.}
+\begin{tabular}{@{}c|c@{}}
+\toprule
+Equation & Interpretation \\ \midrule
+{\parbox[c]{0.3\linewidth}{\begin{gather*} \nabla \cdot \bm{E} = \frac{\rho}{\epsilon_o} \end{gather*}}} & {\parbox[c]{0.6\linewidth}{\begin{center} $\bm{E}$-fields with divergence come from charges (electric monopoles). \end{center}}} \\ \midrule
+{\parbox[c]{0.3\linewidth}{\begin{gather*} \nabla \cdot \bm{B} = 0 \end{gather*}}} & {\parbox[c]{0.6\linewidth}{\begin{center} $\bm{B}$-fields with divergence don't exist (no magnetic monopoles). \end{center}}} \\ \midrule
+{\parbox[c]{0.3\linewidth}{\begin{gather*} \nabla \times \bm{E} = -\frac{\partial \bm{B}}{\partial t} \end{gather*}}} & {\parbox[c]{0.6\linewidth}{\begin{center} $\bm{E}$-fields with curl come from time-varying $\bm{B}$-fields --- and those \emph{only}. \end{center}}} \\ \midrule
+{\parbox[c]{0.3\linewidth}{\begin{align*} \nabla \times \bm{B} &= \mu_o \bm{J} + \mu_o \epsilon_o \frac{\partial \bm{E}}{\partial t} \\ &= \mu_o \left( \bm{J} + \bm{J}_D \right) \end{align*}}} & {\parbox[c]{0.6\linewidth}{\begin{center} $\bm{B}$-fields with curl come from currents (moving electric monopoles) and from time-varying $\bm{E}$-fields. Sometimes we refer to $\epsilon_o \frac{\partial \bm{E}}{\partial t}$ as displacement current and bundle the $J$'s together. \end{center}}} \\ \bottomrule
+\end{tabular}
+\end{table}
+
+In regions of space where there is no charge or current, Maxwell's equations read
 \begin{equation*}
-    \begin{cases} \displaystyle \nabla \cdot \bm{E} = \frac{\rho}{\epsilon_o} \\ \displaystyle \nabla \cdot \bm{B} = 0 \\ \displaystyle \nabla \times \bm{E} = -\frac{\partial\bm{B}}{\partial t} \\ \displaystyle \nabla \times \bm{B} = \mu_o \bm{J} + \mu_o\epsilon_o \frac{\partial\bm{E}}{\partial t} \end{cases}.
+	\begin{rcases} \displaystyle \nabla \cdot \bm{E} = 0,& \qquad \displaystyle \nabla \times \bm{E} = -\frac{\partial \bm{B}}{\partial t}, \\[1em] \displaystyle \nabla \cdot \bm{B} = 0,& \qquad \displaystyle \nabla \times \bm{B} = \mu_o \epsilon_o \frac{\partial \bm{E}}{\partial t}.\quad \end{rcases}
 \end{equation*}
 
 The Lorentz force law reads
@@ -154,6 +169,64 @@ Consider some $A \in \bbR^{p \times q}$ and $B \in \bbR^{q \times p}$. We can re
 respectively. Then the product $AB$ can be written
 \begin{equation*}
     AB = \begin{pmatrix} a_{11} b_{11} + \cdots + a_{1q} b_{q1} & a_{11} b_{12} + \cdots + a_{1q} b_{q2} & \cdots & a_{11} b_{1p} + \cdots + a_{1q} b_{qp} \\ a_{21} b_{11} + \cdots + a_{2q} b_{q1} & a_{21} b_{12} + \cdots + a_{2q} b_{q2} & \cdots & a_{21} b_{1p} + \cdots + a_{2q} b_{qp} \\ \vdots & \vdots & \ddots & \vdots \\ a_{p1} b_{11} + \cdots + a_{pq} b_{q1} & a_{p1} b_{12} + \cdots + a_{pq} b_{q2} & \cdots & a_{p1} b_{1p} + \cdots + a_{pq} b_{qp} \end{pmatrix}.
+\end{equation*}
+
+\section{Sinusoidal Waves}
+
+A sinusoidal wave assumes the form
+\begin{equation*}
+    g(z,t) = A \cos{\left[ k \left( z - vt \right) + \delta \right]}.
+\end{equation*}
+
+Figure (\ref{fig:sinusoidalwave}) shows this function at $t = 0$. The amplitude of the wave is $A$. The argument of the cosine is called the phase, and $\delta$ is the phase constant. At $z = vt - \delta / k$, the phase is zero; this is known as the ``central maximum.'' Observe that $\delta/k$ is the distance by which the central maximum is ``delayed.'' Finally, $k$ is the wave number; it is related to the wavelength $\lambda$ by the equation
+\begin{equation*}
+    \lambda = \frac{2\pi}{k},
+\end{equation*}
+
+for when $z$ advances by $2\pi/k$, the cosine executes one complete cycle.
+
+\begin{figure}[H]
+\captionsetup{width=0.8\textwidth,labelfont={color=BLACK,bf},textfont={color=BLACK}}
+\centering
+\begin{tikzpicture}[scale=1.1]
+    \draw[BLACK, ->] (-4,0) -- (9,0) node[BLACK, anchor=west] {$z$};
+    \draw[BLACK, ->] (0,-1.4) -- (0,1.4) node[BLACK, anchor=south] {$g(z,0)$};
+    \draw[BLUE, thick] (-4.6,1) cos (-3.6,0);
+    \draw[BLUE, thick] (-3.6,0) sin (-2.6,-1);
+    \draw[BLUE, thick] (-2.6,-1) cos (-1.6,0);
+    \draw[BLUE, thick] (-1.6,0) sin (-0.6,1);
+    \draw[BLUE, thick] (-0.6,1) cos (0.6,0);
+    \draw[BLUE, thick] (0.6,0) sin (1.6,-1);
+    \draw[BLUE, thick] (1.6,-1) cos (2.6,0);
+    \draw[BLUE, thick] (2.6,0) sin (3.6,1);
+    \draw[BLUE, thick] (3.6,1) cos (4.6,0);
+    \draw[BLUE, thick] (4.6,0) sin (5.6,-1);
+    \draw[BLUE, thick] (5.6,-1) cos (6.6,0);
+    \draw[BLUE, thick] (6.6,0) sin (7.6,1);
+    %
+    \draw[BLACK, ->] (3.6,0) -- (3.6,1) node[BLACK, left, midway] {\small $A$};
+    \draw[BLACK] (3.2,1) -- (4.0,1);
+    %
+    \filldraw[BLACK] (-0.6,1) circle (0.1);
+    \node[BLACK, above] at (-3.6,1.3) {\parbox[c]{0.2\textwidth}{\begin{center} \small Central \\ maximum \end{center}}};
+    \draw[BLACK, thick, <-] (-0.7,1.1) -- (-3,2);
+    %
+    \draw[BLACK, dashed] (-0.6,1) -- (-0.6,0);
+	\draw[BLACK, thick, decoration={brace, mirror, raise=5pt}, decorate] (-0.6,0) -- (0,0) node[black, midway, below=6pt] {\small $\delta/k$};
+	%
+	\draw[BLACK, ->] (5,1.6) -- (6.6,1.6) node[BLACK, midway, above] {\small $v$};
+	%
+	\draw[BLACK] (1.6,-1) -- (1.6,-1.5);
+	\draw[BLACK] (5.6,-1) -- (5.6,-1.5);
+	\draw[BLACK, <->] (1.6,-1.25) -- (5.6,-1.25) node[BLACK, midway, below] {\small $\lambda$};
+\end{tikzpicture}
+\caption{A sinusoidal wave train. With the passage of time, the entire wave train proceeds to the right.}
+\label{fig:sinusoidalwave}
+\end{figure}
+
+At any fixed point $z$, the string vibrates up and down, undergoing one full cycle in a period
+\begin{equation*}
+    T = \frac{2\pi}{kv}.
 \end{equation*}
 
 \section{Electric Fields on Pointy Things}
@@ -411,7 +484,7 @@ And clearly, $A$ and $B$ must necessarily commute.
 
 \section{Blind Text}
 
-\blindtext[1]
+\blindtext[3]
 
 \section{Some Results from Real Analysis}
 
