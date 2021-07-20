@@ -65,24 +65,6 @@ Finally, one can label a point $P$ by its cylindrical coordinates $(\rho, \phi, 
     \begin{rcases} \displaystyle \rhohat = \cos{\phi}\ \ihat + \sin{\phi}\ \jhat, \\ \displaystyle \phihat = -\sin{\phi}\ \ihat + \cos{\phi}\ \jhat, \\ \displaystyle \zhat = \khat. \end{rcases}
 \end{equation}
 
-\section{Awesome Circled Numbers}
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=1.6]
-    \foreach \c in {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
-    {
-        \node at (\c,0) {\Huge\circled{\c}{TEAL}{RED}{BLACK}};
-    }
-\end{tikzpicture}
-\caption*{Here are some cool circled numbers. The first argument is whatever is to be circled, and the second argument is the background color. The third argument is the outline color, and the fourth argument is the color of the first argument.}
-\end{figure}
-
-These circled numbers work in equations too!
-\begin{equation*}
-    \bigints_{\circled{$a$}{PINK}{BLACK}{BLACK}}^{\circled{$b$}{GOLDC}{BLACK}{BLACK}} \Scale[2]{f(x)} \Scale[2]{dx} \hspace{1em} \Scale[2]{+} \hspace{1em} \bigints_{\circled{$b$}{GOLDC}{BLACK}{BLACK}}^{\circled{$a$}{PINK}{BLACK}{BLACK}} \Scale[2]{f(x)} \Scale[2]{dx} \hspace{1em} \Scale[2]{=} \hspace{1em} \Scale[2]{\circled{0}{GREEN}{RED}{BLACK}}
-\end{equation*}
-
 \section{Consider a Graph}
 
 Consider a graph with vertices
@@ -125,6 +107,8 @@ The directed graph for this vertex set $V$ and edge set $E$ is
     \draw[black, ultra thick, ->] (nodeV4) -- (nodeV6);
 \end{tikzpicture}
 \end{figure}
+
+\newpage
 
 \section{Classical Electromagnetism}
 
@@ -484,7 +468,9 @@ And clearly, $A$ and $B$ must necessarily commute.
 
 \section{Blind Text}
 
-\blindtext[3]
+\blindtext[2]
+
+\newpage
 
 \section{Some Results from Real Analysis}
 
@@ -506,7 +492,7 @@ HTML color codes are hexadecimal triplets representing the colors red, green and
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=0.75]
+\begin{tikzpicture}[scale=0.5]
     % primary colors
     \fill[BLUE] (30:2.4) circle (4);
     \fill[RED] (150:2.4) circle (4);
@@ -532,5 +518,26 @@ HTML color codes are hexadecimal triplets representing the colors red, green and
     \end{scope}
 \end{tikzpicture}
 \end{figure}
+
+\section{Awesome Circled Numbers and Highlighting}
+
+Here are some cool circled numbers. The first argument is whatever is to be circled, and the \colorbox{TEAL}{second argument} is the background color. The \colorbox{PURPLE}{third argument} is the outline color, and the \colorbox{RED}{fourth argument} is color of the first argument.
+
+\begin{figure}[H]
+\captionsetup{width=0.8\textwidth,labelfont={color=BLACK,bf},textfont={color=BLACK}}
+\centering
+\begin{tikzpicture}[scale=1.6]
+    \foreach \c in {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+    {
+        \node at (\c,0) {\Huge\circled{\c}{TEAL}{PURPLE}{RED}};
+    }
+\end{tikzpicture}
+\caption*{Isn't this cool?}
+\end{figure}
+
+These circled numbers work in equations too!
+\begin{equation*}
+    \bigints_{\circled{$a$}{PINK}{BLACK}{BLACK}}^{\circled{$b$}{GOLDC}{BLACK}{BLACK}} \Scale[2]{f(x)} \Scale[2]{dx} \hspace{1em} \Scale[2]{+} \hspace{1em} \bigints_{\circled{$b$}{GOLDC}{BLACK}{BLACK}}^{\circled{$a$}{PINK}{BLACK}{BLACK}} \Scale[2]{f(x)} \Scale[2]{dx} \hspace{1em} \Scale[2]{=} \hspace{1em} \Scale[2]{\circled{0}{GREEN}{RED}{BLACK}}
+\end{equation*}
 
 \end{document}
