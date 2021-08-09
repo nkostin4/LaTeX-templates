@@ -67,9 +67,6 @@
 % No auto-indent
 \setlength{\parindent}{0pt}
 
-% Asymptote - 3D vector graphics
-\usepackage{asymptote}
-
 % Tikz Package Stuff
 \usepackage{pgf,tikz,pgfplots}
 \usepackage{tikz-3dplot}
@@ -84,7 +81,6 @@
 % pgfplots package settings
 \pgfplotsset{compat=1.15}
 % \pgfplotsset{width=10cm,compat=1.9} % Taken from latest overleaf.
-
 
 % Awesome circled numbers
 \newcommand*\circled[4]{\tikz[baseline=(char.base)]{\node[shape=circle, fill=#2, draw=#3, text=#4, inner sep=2pt] (char) {#1};}}
@@ -109,45 +105,6 @@
 
 % Useful symbols
 \usepackage{marvosym}
-
-% Change end-of-proof symbol
-\renewcommand\qedsymbol{$\blacksquare$}
-
-%%%% BLACKBOARD BOLD %%%%
-\newcommand{\bbN}{\mathbb{N}} % Natural numbers
-\newcommand{\bbZ}{\mathbb{Z}} % Zahlen
-\newcommand{\bbQ}{\mathbb{Q}} % Rational numbers
-\newcommand{\bbR}{\mathbb{R}} % Real numbers
-\newcommand{\bbC}{\mathbb{C}} % Complex numbers
-\DeclareSymbolFont{bbold}{U}{bbold}{m}{n} % Identity matrix
-\DeclareSymbolFontAlphabet{\mathbbold}{bbold} % Identity matrix
-\newcommand{\identitymatrix}{\mathbbold{1}} % Identity matrix
-
-%%%% CODE LISTING %%%
-\usepackage{listings}
-\definecolor{greencomments}{HTML}{00BA00}
-\definecolor{graynumbers}{HTML}{4F4F4F}
-\definecolor{purplestrings}{HTML}{AD00AA}
-\definecolor{backgroundcolor}{HTML}{E8E8E8}
-\lstdefinestyle{nkostin}{
-    backgroundcolor=\color{backgroundcolor},   
-    commentstyle=\color{greencomments},
-    keywordstyle=\color{blue},
-    numberstyle=\tiny\color{graynumbers},
-    stringstyle=\color{purplestrings},
-    basicstyle=\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
-    showspaces=false,                
-    showstringspaces=false,
-    showtabs=false,                  
-    tabsize=2
-}
-\lstset{style=nkostin}
 
 %%%% COLORS: DEFINITIONS AND COMMANDS %%%%
 % Miscellaneous
@@ -286,12 +243,13 @@
 
 \begin{minipage}{0.63\textwidth}
 \begin{flushleft}
-\textsc{\Huge{Nicholas D. Kostin}}
+\textsc{\Huge{\textbf{Nicholas D. Kostin}}}
 \end{flushleft}
 \end{minipage}
 ~
 \begin{minipage}{0.35\textwidth}
 \begin{flushright}
+% \parbox[c]{\textwidth}{Website: \url{https://nkostin.xyz} \\ Email: \href{mailto:contact@nkostin.xyz}{contact@nkostin.xyz} \\ GitHub: \url{https://github.com/nkostin4} \\ Mobile: +1 719-271-9108}
 \parbox[c]{\textwidth}{Website: \url{https://nkostin.xyz} \\ Email: \texttt{contact@nkostin.xyz} \\ GitHub: \url{https://github.com/nkostin4} \\ Mobile: +1 719-271-9108}
 \end{flushright}
 \end{minipage}
@@ -326,7 +284,7 @@
 \setlength{\itemsep}{0em}
 \item Assist teams of students work through physics questions in a studio learning environment
 \item Facilitate lab exercises; troubleshoot experimental setups
-\item Help students achieve mastery of the material through offic hours; proctor and grade \href{https://lukesmith.xyz}{exams}
+\item Help students achieve mastery of the material through offic hours; proctor and grade exams
 \end{itemize}
 
 \hspace{1.5em} \textbf{SAGE Affordable Tutoring} \hfill Colorado Springs, CO
@@ -347,12 +305,32 @@
 \textbf{\Large{Technical Skills}} \\[-0.5em]
 \rule{\textwidth}{1pt}
 
-\hspace{1.5em} \textbf{Computing Languages and Software:}
+\hspace{1.5em} \textbf{Scientific/Numerical Computing:}
 
-\hspace{3.0em} Python $\quad\bullet\quad$ Mathematica $\quad\bullet\quad$ \textsc{MatLab}
+\hspace{3.0em} Python, extensive knowledge of \texttt{numpy}, \texttt{scipy} and \texttt{manim} libraries. $\quad\bullet\quad$ Mathematica $\quad\bullet\quad$ \textsc{MatLab} $\quad\bullet\quad$ R
+
+\vspace{0.5em}
+
+\hspace{1.5em} \textbf{General-Purpose Programming:}
+
+\hspace{3.0em} C $\quad\bullet\quad$ C++ $\quad\bullet\quad$ POSIX Shell Scripting
+
+\vspace{0.5em}
 
 \hspace{1.5em} \textbf{Markup Languages \& Vector Graphics:}
 
-\hspace{3.0em} \LaTeX $\quad\bullet\quad$ HTML CSS
+\hspace{3.0em} Troff/Groff $\quad\bullet\quad$ {\LaTeX}, proficient with Ti\textit{k}Z and PGF $\quad\bullet\quad$ HTLM / CSS $\quad\bullet\quad$ Asymptote $\quad\bullet\quad$ R Markdown
+
+\vspace{0.5em}
+
+\hspace{1.5em} \textbf{Operating Systems:} (extensive use of all of the following)
+
+\hspace{3.0em} Desktop: Arch Linux, NixOS, Gentoo, Void Linux $\quad\bullet\quad$ Server: Debian, Ubuntu, OpenBSD
+
+\vspace{0.5em}
+
+\hspace{1.5em} \textbf{Other:}
+
+\hspace{3.0em} Technical Writing $\quad\bullet\quad$ Public Speaking $\quad\bullet\quad$ Fluent in Russian
 
 \end{document}
