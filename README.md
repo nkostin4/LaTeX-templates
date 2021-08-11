@@ -18,6 +18,4 @@ So far this repo contains the following:
 + Standard homework template for university coursework
 + Beamer presentations
 + Short articles (includes example on good practice)
-
-Coming soon:
 + My CV/résumé
