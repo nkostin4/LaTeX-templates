@@ -10,6 +10,11 @@
 % Number equations within sections
 \numberwithin{equation}{section}
 
+% Continuous per-section numbering of figures and tables
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
 % Bibliography Management
 \usepackage[backend=biber,sorting=none]{biblatex}
 \addbibresource{ref.bib}
