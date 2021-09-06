@@ -9,6 +9,14 @@
 
 \input{../preamblex}
 
+% Number equations within sections
+\numberwithin{equation}{section}
+
+% Continuous per-section numbering of figures and tables
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
 % Bibliography Management - uncomment if bibliography is needed
 % \usepackage[backend=biber,sorting=none]{biblatex}
 % \addbibresource{ref.bib}
@@ -17,9 +25,9 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead{}
-\fancyhead[LO,LE]{Journal}
-\fancyhead[CO,CE]{Illustrating Good Practice in {\LaTeX}}
-\fancyhead[RO,RE]{Chapter\ \thechapter}
+\fancyhead[LO,LE]{Chapter\ \thechapter}
+\fancyhead[CO,CE]{{\LaTeX} for Normies?}
+\fancyhead[RO,RE]{Section\ \thesection}
 \fancyfoot{}
 \fancyfoot[LE,RO]{\thepage\ of \pageref{LastPage}}
 \fancyfoot[LO,RE]{\texttt{https://nkostin.xyz}}
@@ -30,16 +38,16 @@
 
 \centering
 
-\includegraphics[width=\textwidth]{images/mines.png}
+\includegraphics[width=\textwidth]{images/netscapenavigator.png}
 
 \vspace{2.0em}
 
-\textsc{\large {DEPARTMENT OF APPLIED MATHEMATICS AND PHYSICS}}
+\textsc{\large {*SIPS* NOW THAT WAS A GOOD BROWSER}}
 
 \vspace{1.0em}
 
 \rule{\textwidth}{1pt}\\[0.2em]
-{\huge {\textbf{MATH 400 --- SPECTRAL ANALYSIS \\[0.2cm] OF LINEAR OPERATORS}}}\\[0.2em]
+{\huge {\textbf{I DON'T KNOW HOW MANY LAYERS \\[0.2cm] OF IRONY I'M WORKING WITH HERE}}}\\[0.2em]
 \rule{\textwidth}{1pt}
 
 \vspace{2.0em}
@@ -50,15 +58,15 @@
 
 \begin{minipage}{0.4\textwidth}
 \begin{flushleft} \large
-\emph{Instructor(s):} \\
-\textsc{Dr. Jens Fehlau} \\
+\emph{Influencer(s):} \\
+\textsc{Luke Smith} \\
 \end{flushleft}
 \end{minipage}
 ~
 \begin{minipage}{0.4\textwidth}
 \begin{flushright} \large
-\textsc{MATH 400 - A} \\
-\textsc{Summer 2003}
+\textsc{Based and Redpilled} \\
+\textsc{September 1999}
 \end{flushright}
 \end{minipage}
 
@@ -66,20 +74,24 @@
 
 \end{titlepage}
 
+\newpage
+
 \tableofcontents
 
-\chapter*{CHAPTER 1}
-\addtocounter{chapter}{1}
-\addcontentsline{toc}{chapter}{HOMEWORK 1}
+\chapter{OPENING}
 \newpage
-\import{chapters/}{chapter1}
+\import{chapters/}{opening}
 
 \newpage
 
-\chapter*{CHAPTER 2}
-\addtocounter{chapter}{1}
-\addcontentsline{toc}{chapter}{HOMEWORK 2}
+\chapter{HAMBURGER}
 \newpage
-\import{chapters/}{chapter2}
+\import{chapters/}{hamburger}
+
+\newpage
+
+\chapter{CLOSING}
+\newpage
+\import{chapters/}{closing}
 
 \end{document}
