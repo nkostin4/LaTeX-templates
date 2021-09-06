@@ -1,0 +1,85 @@
+\documentclass[twoside]{report}
+\usepackage{standalone}
+\usepackage[utf8]{inputenc} % UTF-8
+\usepackage[T1]{fontenc} % Font Encoding
+\usepackage{import}
+
+% Set page geometry
+\usepackage[margin=2.5cm,headsep=0.5cm]{geometry}
+
+\input{../preamblex}
+
+% Bibliography Management - uncomment if bibliography is needed
+% \usepackage[backend=biber,sorting=none]{biblatex}
+% \addbibresource{ref.bib}
+
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead{}
+\fancyhead[LO,LE]{Journal}
+\fancyhead[CO,CE]{Illustrating Good Practice in {\LaTeX}}
+\fancyhead[RO,RE]{Chapter\ \thechapter}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage\ of \pageref{LastPage}}
+\fancyfoot[LO,RE]{\texttt{https://nkostin.xyz}}
+
+\begin{document}
+
+\begin{titlepage}
+
+\centering
+
+\includegraphics[width=\textwidth]{images/mines.png}
+
+\vspace{2.0em}
+
+\textsc{\large {DEPARTMENT OF APPLIED MATHEMATICS AND PHYSICS}}
+
+\vspace{1.0em}
+
+\rule{\textwidth}{1pt}\\[0.2em]
+{\huge {\textbf{MATH 400 --- SPECTRAL ANALYSIS \\[0.2cm] OF LINEAR OPERATORS}}}\\[0.2em]
+\rule{\textwidth}{1pt}
+
+\vspace{2.0em}
+
+\textsc{\huge \textcolor{DARKBLUE}{\textsc{Nicholas D. Kostin}}}
+
+\vspace{2.6em}
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Instructor(s):} \\
+\textsc{Dr. Jens Fehlau} \\
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\textsc{MATH 400 - A} \\
+\textsc{Summer 2003}
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+\end{titlepage}
+
+\tableofcontents
+
+\chapter*{CHAPTER 1}
+\addtocounter{chapter}{1}
+\addcontentsline{toc}{chapter}{HOMEWORK 1}
+\newpage
+\import{chapters/}{chapter1}
+
+\newpage
+
+\chapter*{CHAPTER 2}
+\addtocounter{chapter}{1}
+\addcontentsline{toc}{chapter}{HOMEWORK 2}
+\newpage
+\import{chapters/}{chapter2}
+
+\end{document}

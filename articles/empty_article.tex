@@ -101,9 +101,6 @@
 % Big integrals
 \usepackage{bigints}
 
-% Number equations within sections
-\numberwithin{equation}{section}
-
 % Generate blind text
 \usepackage{blindtext}
 
@@ -342,9 +339,37 @@
 \newcommand{\DARKERGRAY}{\color{DARKERGRAY}}
 \newcommand{\GRAYBROWN}{\color{GRAYBROWN}}%
 
+% Number equations within sections
+\numberwithin{equation}{section}
+
+% Continuous per-section numbering of figures and tables
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+\title{Empty Article}
+\author{Nicholas D. Kostin}
+\date{October 2021}
+
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Empty Article}
+\rhead{Nicholas D. Kostin}
+\lfoot{\texttt{https://nkostin.xyz}}
+\rfoot{\thepage\ of \pageref{LastPage}}
+
 \begin{document}
 
+% Remove following line to remove title
+\maketitle
+
 Nicholas D. Kostin \\
-\texttt{https://github.com/nkostin4/LaTeX-templates}
+\url{https://nkostin.xyz}
+
+\newpage
+
+Nicholas D. Kostin \\
+\url{https://nkostin.xyz}
 
 \end{document}

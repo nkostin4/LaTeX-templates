@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 % Packages from AMS and mathtools
 \usepackage{amsmath,amsthm,amssymb,marvosym,mathrsfs,amsfonts,amscd,mathtools}
@@ -152,29 +153,41 @@
 
 \thispagestyle{empty}
 
-\begin{gather*}
-    \Scale[4]{\DARKBLUE\text{MATH}\ 400 - \mathbb{L}\text{yapunov}} \\
-    \Scale[4]{\DARKBLUE\mathbb{F}\text{unctions}\ 
-    \cat[scale=0.08, top color=BLUEC, bottom color=GREENB]}
-\end{gather*}
+\centering
 
-\begin{gather*}
-    \Scale[2]{\DARKBLUE\text{Homework }4 \quad-\quad \text{1 September 2003}}
-\end{gather*}
+\includegraphics[width=\textwidth]{mines.png}
+
+\vspace{1cm}
+
+\textsc{\large {DEPARTMENT OF APPLIED MATHEMATICS AND STATISTICS}}
 
 \vspace{0.5cm}
 
-\begin{gather*}
-    \Scale[4]{\red\mathbb{N}\DARKBLUE\text{icholas}\ \red\mathbb{D}\DARKBLUE.\ \red\mathbb{K}\DARKBLUE\text{ostin}}
-\end{gather*}
+\rule{\textwidth}{1pt}\\[0.1cm]
+{\huge {\textbf{MATH 400 --- SPECTRAL ANALYSIS \\[0.1cm] OF LINEAR OPERATORS}}}\\[0.1cm]
+\rule{\textwidth}{1pt}
 
-\vspace{2.2cm}
 
-\begin{figure}[H]
-\captionsetup{width=0.8\textwidth,labelfont={color=DARKBLUE,bf},textfont={color=DARKBLUE}}
-\centering
-\fbox{\begin{tikzpicture} \node at (0,0) {\bunny[scale=4, top color = BLUEC, bottom color = REDE]}; \end{tikzpicture}}
-\caption*{A bunny.}
-\end{figure}
+\vspace{1cm}
+
+\textsc{\huge \textcolor{DARKBLUE}{\textsc{Nicholas D. Kostin}}}
+
+\vspace{1.4cm}
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Instructor(s):} \\
+\textsc{Dr. Jens Fehlau} \\
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\textsc{MATH 400 - A} \\
+\textsc{Summer 2003}
+\end{flushright}
+\end{minipage}
+
+\vfill
 
 \end{document}
