@@ -7,6 +7,11 @@
 
 \input{../preamblex}
 
+% Continuous per-section numbering of figures and tables
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
 \title{Illustrating Good Practice in {\LaTeX}}
 \author{Nicholas D. Kostin}
 \date{October 2021}
@@ -16,7 +21,7 @@
 \fancyhf{}
 \lhead{Illustrating Good Practice in {\LaTeX}}
 \rhead{Nicholas D. Kostin}
-\lfoot{\texttt{https://github.com/nkostin4}}
+\lfoot{\texttt{https://nkostin.xyz}}
 \rfoot{\thepage\ of \pageref{LastPage}}
 
 \begin{document}
@@ -80,7 +85,7 @@ Here are the Maxwell equations:
 \begin{table}[H]
 \centering
 \captionsetup{width=0.8\textwidth,labelfont={color=black,bf},textfont={color=black}}
-\caption*{Maxwell's equations and their interpretation.}
+\caption{Maxwell's equations and their interpretation.}
 \begin{tabular}{@{}c|c@{}}
 \toprule
 Equation & Interpretation \\ \midrule
@@ -547,5 +552,93 @@ The directed graph for this vertex set $V$ and edge set $E$ is
     \draw[black, ultra thick, ->] (nodeV4) -- (nodeV6);
 \end{tikzpicture}
 \end{figure}
+
+\section{A Particle in 3D}
+
+A particle in 3D has mass $m$ and is in the potential $V(x,y,z) = \frac{1}{2} m \omega^2 \left( x^2 + y^2 + z^2 \right).$
+
+\subsection{Energies of the Lowest Four Eigenstates}
+
+Suppose we need to find the energies of the four lowest eigenstates of the Hamiltonian and their corresponding degeneracies. We can start by expanding the potential as
+\begin{equation*}
+    V(x, y, z) = \underbrace{\frac{1}{2} m \omega^2 x^2}_{V_x(x)} + \underbrace{\frac{1}{2} m \omega^2 y^2}_{V_y(y)} + \underbrace{\frac{1}{2} m \omega^2 z^2}_{V_z(z)}.
+\end{equation*}
+
+And the total eigenenergy is
+\begin{equation}
+    E_{n_x n_y n_z} = E_{n_x} + E_{n_y} + E_{n_z} = \hbar \omega \left( n_x + \frac{1}{2} \right) + \hbar \omega \left( n_y + \frac{1}{2} \right) + \hbar \omega \left( n_z + \frac{1}{2} \right) \label{eq:3dQHO:eigenenergy}
+\end{equation}
+
+where $n_x, n_y, n_z = 0, 1, 2, \dots$ are independent from each other. The ground state should have $n_x = n_y = n_z = 0$, so its energy is given by
+
+\begin{equation*}
+    E_{000} = 3 \hbar \omega \left( \frac{1}{2} \right) = \frac{3}{2} \hbar \omega.
+\end{equation*}
+
+The first excited state has energy
+\begin{equation*}
+    \underbrace{E_{100} = E_{010} = E_{001}}_{\text{degeneracy 3}} = \frac{\hbar}{\omega} \left( \frac{3}{2} + \frac{1}{2} + \frac{1}{2} \right) = \frac{5}{2} \hbar \omega.
+\end{equation*}
+
+The second excited state has energy
+\begin{equation*}
+    \underbrace{E_{200} = E_{020} = E_{002} = E_{110} = E_{101} = E_{011}}_{\text{degeneracy 6}} = \frac{\hbar}{\omega} \left( \frac{5}{2} + \frac{1}{2} + \frac{1}{2} \right) = \frac{7}{2} \hbar \omega.
+\end{equation*}
+
+And finally, the third excited state has energy
+\begin{equation*}
+    \underbrace{\left\{ \begin{array}{l} E_{300} = E_{030} = E_{003} = E_{111} = E_{102} \\[0.4em] E_{120} = E_{201} = E_{021} = E_{210} = E_{012} \end{array} \right\}}_{\text{degeneracy 10}} = \frac{\hbar}{\omega} \left( \frac{7}{2} + \frac{1}{2} + \frac{1}{2} \right) = \frac{9}{2} \hbar \omega.
+\end{equation*}
+
+These results are summarized in the table below.
+
+\begin{table}[H]
+\centering
+\captionsetup{width=0.8\textwidth,labelfont={color=BLACK,bf},textfont={color=BLACK}}
+\caption{Energies and corresponding degeneracies of the 3D QHO}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+State & Energy & Degeneracy \\ \midrule
+\multicolumn{1}{c|}{Ground state} & \multicolumn{1}{c|}{$\displaystyle \frac{3}{2}\hbar\omega$} & 1 \\[1em]
+\multicolumn{1}{c|}{First excited state} & \multicolumn{1}{c|}{$\displaystyle \frac{5}{2}\hbar\omega$} & 3 \\[1em]
+\multicolumn{1}{c|}{Second excited state} & \multicolumn{1}{c|}{$\displaystyle \frac{7}{2}\hbar\omega$} & 6 \\[1em]
+\multicolumn{1}{c|}{Third excited state} & \multicolumn{1}{c|}{$\displaystyle \frac{9}{2}\hbar\omega$} & 10 \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Degeneracy of an Arbitrary Excited State}
+
+Now suppose we need to find the degeneracy $g_n$ of the $n^{th}$ excited state as a function of $n$. For our three-dimensional harmonic oscillator, we can define
+\begin{equation*}
+    n = n_x + n_y + n_z.
+\end{equation*}
+
+It follows from Eq. (\ref{eq:3dQHO:eigenenergy}) that the energy is strictly a function of $n$. That is, any combination of $n_x$, $n_y$, and $n_z$, as long as they produce the same $n$, will yield the same energy. Such states are said to be \emph{degenerate}. Our goal is to find how many possible combinations of $n_x$, $n_y$, and $n_z$ exist for a given $n$.
+
+To explicitly determine the degeneracy $g_n$ for a given state, we fix the value of $n$. Because of the restriction imposed by setting $n = n_x + n_y + n_z$, we really have two free parameters (say, $n_x$ and $n_y$). We let $n_x$ assume any allowable integer value:
+\begin{equation*}
+    n_x \in \left\{ 0, 1, \dots, n \right\}.
+\end{equation*}
+
+Then $n_y$ can assume any integer value given the sum $n_x + n_y$ does not exceed $n$:
+\begin{equation*}
+    n_y \in \left\{ 0, 1, \dots, n - n_x \right\}.
+\end{equation*}
+
+In particular, for any value of $n_x$, there are $n - n_x + 1$ unique choices for $n_y$ (note the size of the set of permissible $n_y$ values). Finally, $n_z$ is automatically fixed:
+\begin{equation*}
+    n_z = n - n_x - n_y.
+\end{equation*}
+
+For each permissible value of $n_x$ (from $0$ to $n$), there are $n - n_x + 1$ choices for $n_y$. Summing the number of these choices for all allowable values of $n_x$ yields
+\begin{align*}
+    \sum\limits_{n_x = 0}^n \left( n - n_x + 1 \right) &= \left(n + 1\right) + n + \left(n - 2\right) + \cdots + \cancelto{0}{\left(n - n\right)} \\
+                                                       &= \frac{\left(n+1\right) \left(n+2\right)}{2}.
+\end{align*}
+
+The series above is well known. Thus, we find that the degeneracy is
+\begin{equation*}
+    g_n = \frac{\left(n+1\right) \left(n+2\right)}{2}.
+\end{equation*}
 
 \end{document}
