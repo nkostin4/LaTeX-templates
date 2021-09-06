@@ -13,9 +13,13 @@ Note that the example beamer slideshow (in the presentation directory) has it's 
 ## What's in Here?
 
 So far this repo contains the following:
-+ A comprehensive preamble file
-+ A comprehensive bibliography file
-+ Standard homework template for university coursework
-+ Beamer presentations
-+ Short articles (includes example on good practice)
++ A super comprehensive preamble file called `preamblex.tex`
++ Short articles
+  + References with `biber`
+  + An article containing many examples on good practice
+  + Empty article
++ Report template
++ Beamer presentations template
++ Homework coverpages for university coursework
+  + A short bibliography file on some textbooks I've used in uni
 + My CV/résumé
