@@ -24,8 +24,9 @@ So far this repo contains the following:
 + My CV/résumé
 
 Coming soon:
++ Migrate to using named CSS colors in `preamblex.tex`
+  + Current colors are deprecated 
 + More beamer presentations
   + Include more themes
-  + Possibly go through the rigmarole of creating custom themes?
+  + Possibly go through the rigmarole of creating my own theme?
 + Custom logo/artwork with TikZ
-+ Add more examples that demonstrate good practice
