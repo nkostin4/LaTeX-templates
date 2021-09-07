@@ -22,3 +22,10 @@ So far this repo contains the following:
 + Homework coverpages for university coursework
   + A short bibliography file with some textbooks I've used in uni
 + My CV/résumé
+
+Coming soon:
++ More beamer presentations
+  + Include more themes
+  + Possibly go through the rigmarole of creating custom themes?
++ Custom logo/artwork with TikZ
++ Add more examples that demonstrate good practice
