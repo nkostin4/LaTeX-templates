@@ -15,11 +15,10 @@ Note that the example beamer slideshow (in the presentation directory) has it's 
 So far this repo contains the following:
 + A super comprehensive preamble file called `preamblex.tex`
 + Short articles
-  + References with `biber`
+  + References with `biber`, accompanied by bibliography file
   + An article containing many examples on good practice
-  + Empty article
 + Report template
 + Beamer presentations template
 + Homework coverpages for university coursework
-  + A short bibliography file on some textbooks I've used in uni
+  + A short bibliography file with some textbooks I've used in uni
 + My CV/résumé
