@@ -25,7 +25,7 @@ So far this repo contains the following:
 
 Coming soon:
 + Migrate to using named CSS colors in `preamblex.tex`
-  + Current colors are deprecated 
+  + Current colors will be deprecated 
 + More beamer presentations
   + Include more themes
   + Possibly go through the rigmarole of creating my own theme?
