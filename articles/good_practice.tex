@@ -219,7 +219,7 @@ That is, the potential $V(x,y)$ is the average of its four neighboring points on
 \centering
 \begin{tikzpicture}[xscale=1,yscale=1]
     % Draw outside rectangle
-    \draw[black] (-2,-2) rectangle (14,10);
+    \draw[BLACK] (-2,-2) rectangle (14,10);
     % Draw lattice points
     \foreach \a in {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
     {
@@ -545,14 +545,14 @@ The directed graph for this vertex set $V$ and edge set $E$ is
     \node at (vertex5) (nodeV5) {\Huge\circled{5}{ORANGE}{RED}{DARKBLUE}};
     \node at (vertex6) (nodeV6) {\Huge\circled{6}{ORANGE}{RED}{DARKBLUE}};
     %
-    \draw[black, ultra thick, <->] (nodeV1) -- (nodeV2);
-    \draw[black, ultra thick, ->] (nodeV2) -- (nodeV3);
-    \draw[black, ultra thick, <->] (nodeV3) -- (nodeV4);
-    \draw[black, ultra thick, ->] (nodeV4) -- (nodeV5);
-    \draw[black, ultra thick, <->] (nodeV5) -- (nodeV6);
-    \draw[black, ultra thick, <->] (nodeV1) -- (nodeV4);
-    \draw[black, ultra thick, ->] (nodeV1) -- (nodeV3);
-    \draw[black, ultra thick, ->] (nodeV4) -- (nodeV6);
+    \draw[BLACK, ultra thick, <->] (nodeV1) -- (nodeV2);
+    \draw[BLACK, ultra thick, ->] (nodeV2) -- (nodeV3);
+    \draw[BLACK, ultra thick, <->] (nodeV3) -- (nodeV4);
+    \draw[BLACK, ultra thick, ->] (nodeV4) -- (nodeV5);
+    \draw[BLACK, ultra thick, <->] (nodeV5) -- (nodeV6);
+    \draw[BLACK, ultra thick, <->] (nodeV1) -- (nodeV4);
+    \draw[BLACK, ultra thick, ->] (nodeV1) -- (nodeV3);
+    \draw[BLACK, ultra thick, ->] (nodeV4) -- (nodeV6);
 \end{tikzpicture}
 \end{figure}
 
