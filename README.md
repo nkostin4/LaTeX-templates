@@ -29,4 +29,5 @@ Coming soon:
 + More beamer presentations
   + Include more themes
   + Possibly go through the rigmarole of creating my own theme?
-+ Custom logo/artwork with TikZ
++ Custom awesome signature with TikZ
++ New repo with TikZ examples
