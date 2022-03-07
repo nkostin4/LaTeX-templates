@@ -17,7 +17,7 @@
 
 \title{Illustrating Good Practice in {\LaTeX}}
 \author{Nicholas D. Kostin}
-\date{July 2022}
+\date{March 2022}
 
 \usepackage{fancyhdr,lastpage}
 \pagestyle{fancy}
@@ -39,25 +39,25 @@ This document is not a guide on how to use {\LaTeX}, since plenty of those alrea
 
 It is not hard to show that the eigenvalues of a Hermitian operator are real. Let $\ket{a}$ be an eigenstate of the Hermitian operator $A$ corresponding to eigenvalue $a$, then
 \begin{equation}
-    A \ket{a} = a \ket{a}. \label{eq:quantum:eigenvalueproblem}
+    A \ket{a} = a \ket{a}. \label{eqn:quantum:eigenvalueproblem}
 \end{equation}
 
 Then we have
 \begin{equation}
-    \braket{a|A|a} = \braket{a|a|a} = a\braket{a|a}. \label{eq:quantum:1}
+    \braket{a|A|a} = \braket{a|a|a} = a\braket{a|a}. \label{eqn:quantum:1}
 \end{equation}
 
-Taking the Hermitian conjugate of both sides of (\ref{eq:quantum:eigenvalueproblem}) gives
+Taking the Hermitian conjugate of both sides of (\ref{eqn:quantum:eigenvalueproblem}) gives
 \begin{equation}
     \bra{a} A^{\dagger} = a^{*} \bra{a}.
 \end{equation}
 
 Then we also have
 \begin{equation}
-    \braket{a|A^{\dagger}|a} = a^{*} \braket{a|a} \label{eq:quantum:2}
+    \braket{a|A^{\dagger}|a} = a^{*} \braket{a|a} \label{eqn:quantum:2}
 \end{equation}
 
-Since $A$ is Hermitian, we have $\braket{a|A^{\dagger}|a} = \braket{a|A|a}$. Then comparing (\ref{eq:quantum:1}) and (\ref{eq:quantum:2}) gives
+Since $A$ is Hermitian, we have $\braket{a|A^{\dagger}|a} = \braket{a|A|a}$. Then comparing (\ref{eqn:quantum:1}) and (\ref{eqn:quantum:2}) gives
 \begin{equation*}
     \left( a - a^* \right) \braket{a|a} = 0.
 \end{equation*}
@@ -569,7 +569,7 @@ Suppose we need to find the energies of the four lowest eigenstates of the Hamil
 
 And the total eigenenergy is
 \begin{equation}
-    E_{n_x n_y n_z} = E_{n_x} + E_{n_y} + E_{n_z} = \hbar \omega \left( n_x + \frac{1}{2} \right) + \hbar \omega \left( n_y + \frac{1}{2} \right) + \hbar \omega \left( n_z + \frac{1}{2} \right) \label{eq:3dQHO:eigenenergy}
+    E_{n_x n_y n_z} = E_{n_x} + E_{n_y} + E_{n_z} = \hbar \omega \left( n_x + \frac{1}{2} \right) + \hbar \omega \left( n_y + \frac{1}{2} \right) + \hbar \omega \left( n_z + \frac{1}{2} \right) \label{eqn:3dQHO:eigenenergy}
 \end{equation}
 
 where $n_x, n_y, n_z = 0, 1, 2, \dots$ are independent from each other. The ground state should have $n_x = n_y = n_z = 0$, so its energy is given by
@@ -616,7 +616,7 @@ Now suppose we need to find the degeneracy $g_n$ of the $n^{th}$ excited state a
     n = n_x + n_y + n_z.
 \end{equation*}
 
-It follows from Eq. (\ref{eq:3dQHO:eigenenergy}) that the energy is strictly a function of $n$. That is, any combination of $n_x$, $n_y$, and $n_z$, as long as they produce the same $n$, will yield the same energy. Such states are said to be \emph{degenerate}. Our goal is to find how many possible combinations of $n_x$, $n_y$, and $n_z$ exist for a given $n$.
+It follows from Eq. (\ref{eqn:3dQHO:eigenenergy}) that the energy is strictly a function of $n$. That is, any combination of $n_x$, $n_y$, and $n_z$, as long as they produce the same $n$, will yield the same energy. Such states are said to be \emph{degenerate}. Our goal is to find how many possible combinations of $n_x$, $n_y$, and $n_z$ exist for a given $n$.
 
 To explicitly determine the degeneracy $g_n$ for a given state, we fix the value of $n$. Because of the restriction imposed by setting $n = n_x + n_y + n_z$, we really have two free parameters (say, $n_x$ and $n_y$). We let $n_x$ assume any allowable integer value:
 \begin{equation*}
