@@ -30,4 +30,3 @@ Coming soon:
   + Include more themes
   + Possibly go through the rigmarole of creating my own theme?
 + Custom awesome signature with TikZ
-+ New repo with TikZ examples
