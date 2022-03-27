@@ -7,6 +7,9 @@
 
 \input{../preamblex}
 
+% No auto-indent
+\setlength{\parindent}{0pt}
+
 % Number equations within sections
 \numberwithin{equation}{section}
 
@@ -17,7 +20,7 @@
 
 \title{Illustrating Good Practice in {\LaTeX}}
 \author{Nicholas D. Kostin}
-\date{April 2022}
+\date{March 2022}
 
 \usepackage{fancyhdr,lastpage}
 \pagestyle{fancy}
@@ -447,15 +450,15 @@ And clearly, $A$ and $B$ must necessarily commute.
 
 Here we have a \emph{theorem}.
 
-\begin{theorem}[Bolzano-Weierstrass]
+\begin{mdframed}[backgroundcolor=black!4, align=center, userdefinedwidth=40em, topline=false, bottomline = false, leftline = false, rightline = false, frametitle = {Bolzano-Weierstrass Theorem}]
 Every bounded sequence has a convergent subsequence.
-\end{theorem}
+\end{mdframed}
 
 What follows is a \emph{lemma}.
 
-\begin{lemma}
+\begin{mdframed}[backgroundcolor=black!4, align=center, userdefinedwidth=40em, topline=false, bottomline = false, leftline = false, rightline = false, frametitle = {Lemma}]
 Cauchy sequences are bounded.
-\end{lemma}
+\end{mdframed}
 
 \section{Computer Colors}
 
